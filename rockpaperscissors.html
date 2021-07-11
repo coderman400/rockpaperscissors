@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rock Paper Scissors</title>
+    <style>
+        h1{
+            color: aquamarine;
+            font-family: monospace;
+            font-size: 80px;
+            text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="congrats">CONGRATS U FINISHED THA GAME!!!<br> YOU WILL SHORTLY BE CONTACTED
+    FOR THE PAYMENT FEES FOR PLAYING THE GAME!!!!!!!!!! :D</h1>
+    <script>
+        function computerPlay(){
+            random=Math.floor(Math.random()*3)+1;
+            if(random==1){
+                return "Rock";
+            }else if(random==2){
+                return "Paper";
+            }else {
+                return "Scissors";
+            }
+            console.log(random);
+        }
+       
+        function oneRound(playerWin,compWin){
+            let playerSelection=prompt("Rock, Paper or Scissors?\n YOU: [ "+ playerWin+ " : "+compWin+" ] :COMP");
+            playerSelection=playerSelection.toLowerCase();
+            
+            if(!(playerSelection=="rock"||playerSelection=="paper"||playerSelection=="scissors")){
+                while(!(playerSelection=="rock"||playerSelection=="paper"||playerSelection=="scissors")){
+                    alert("Invalid input, please try again");
+                    playerSelection=prompt("Rock, Paper or Scissors?\n YOU: [ "+ playerWin+ " : "+compWin+" ] :COMP");
+                    playerSelection=playerSelection.toLowerCase();
+
+                }
+            }
+            
+
+            let computerSelection=computerPlay();
+            
+            computerSelection=computerSelection.toLowerCase();
+            if(playerSelection=="rock" && computerSelection=="scissors"){
+                playerWin++;
+                alert("Rock beats scissors! You win!");
+                
+            }else if(playerSelection=="rock" && computerSelection=="paper"){
+                compWin++;
+                alert("Paper beats Rock! You lose!");
+                
+            }else if(playerSelection=="rock" && computerSelection=="rock"){
+                alert( "Rock and Rock are best buds! Its a draw!");
+            }else if(playerSelection=="scissors" && computerSelection=="scissors"){
+                alert("Scissors and Scissors are best buds! Its a draw!");
+            }else if(playerSelection=="scissors" && computerSelection=="paper"){
+                playerWin++;
+                alert("Scissors beats paper! You win!");
+                
+            }else if(playerSelection=="scissors" && computerSelection=="rock"){
+                compWin++;
+                alert("Rock beats scissors! You lose!");
+                
+            }else if(playerSelection=="paper" && computerSelection=="scissors"){
+                compWin++;
+                alert("Scissors beats paper! You lose!");
+                
+            }else if(playerSelection=="paper" && computerSelection=="paper"){
+                alert("Paper and Paper are best buds! Its a draw");
+            }else if(playerSelection=="paper" && computerSelection=="rock"){
+                playerWin++;
+                alert("Paper beats Rock! You win!");
+                
+            }
+            console.log([playerWin,compWin]);
+            return [playerWin, compWin];
+        }
+
+        function game(){
+            let playerWin=0;
+            let compWin=0;
+            let score=[0,0];
+            for(let i=0; i<5; i++){
+                score=oneRound(playerWin,compWin);
+                console.log(score);
+                playerWin=score[0];
+                compWin=score[1];
+                console.log(playerWin,compWin);
+            }
+            if (playerWin>compWin){
+                alert("Its your win with a score of "+playerWin+ ":"+compWin+"!" );
+            }else if(compWin>playerWin){
+                alert("Its your loss with a score of "+playerWin+ ":"+compWin+"!" );
+            }else{
+                alert("It's a draw!!");
+            }
+
+            let repeat=prompt("Would you like to play again?(y/n)");
+            if(repeat=="y"||repeat=="Y"){
+                game();
+            }else{
+                return;
+            }
+            
+            
+        }
+
+
+        /*============ Top level segment ===============================================*/
+        x=document.getElementById("congrats");
+        x.style.display="none";
+        game();
+        
+        x.style.display="block";
+        
+
+    </script>
+
+
+</body>
+
+</html>
+
+
