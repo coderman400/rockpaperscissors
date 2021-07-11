@@ -1,2 +1,3 @@
 # rockpaperscissors
-its rock paper scissors 
+its commandline rock paper scissors 
+5 rounds, can repeat, pretty cool
