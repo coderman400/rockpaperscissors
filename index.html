@@ -26,7 +26,10 @@
             }
             console.log(random);
         }
-       
+        function capitalizeFirstLetter(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+
         function oneRound(playerWin,compWin){
             let playerSelection=prompt("Rock, Paper or Scissors?\n YOU: [ "+ playerWin+ " : "+compWin+" ] :COMP");
             playerSelection=playerSelection.toLowerCase();
@@ -44,6 +47,8 @@
             let computerSelection=computerPlay();
             
             computerSelection=computerSelection.toLowerCase();
+
+            /*
             if(playerSelection=="rock" && computerSelection=="scissors"){
                 playerWin++;
                 alert("Rock beats scissors! You win!");
@@ -75,6 +80,32 @@
                 alert("Paper beats Rock! You win!");
                 
             }
+
+            */
+
+            let tuplething = `${playerSelection},${computerSelection}`
+            switch(tuplething){
+                case "rock,scissors":
+                case "paper,rock":
+                case "scissors,paper":{
+                    alert(`${capitalizeFirstLetter(playerSelection)} beats ${capitalizeFirstLetter(computerSelection)}! You win!`);
+                    playerWin++;
+                    console.log("WINNNN");
+                    break;
+                }
+                
+                case "rock,rock" :
+                case "paper,paper" :
+                case "scissors,scissors" :{
+                    alert(`${capitalizeFirstLetter(playerSelection)} and ${capitalizeFirstLetter(computerSelection)} are best buds! Its a draw!`);
+                    console.log("drawww");
+                    break;
+                }
+                default:{
+                    alert(`${capitalizeFirstLetter(computerSelection)} beats ${capitalizeFirstLetter(playerSelection)}! You lose!`)
+                    compWin++
+                }
+                }
             console.log([playerWin,compWin]);
             return [playerWin, compWin];
         }
@@ -124,4 +155,16 @@
 
 </html>
 
+switch case with expression as (playerSelection,computerSelection)
+(rock,scissor)
+(scissor,paper)
+(paper,rock)
 
+you win! playerSelection beats computerSelection
+
+playerSelection=computerSelection
+
+its a draw
+
+else:
+computerSelection beats playerSelection
