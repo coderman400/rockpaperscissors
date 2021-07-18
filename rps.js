@@ -64,13 +64,15 @@ function gameend(score){
        final.style.color="rgb(255, 226, 231)";
        container.appendChild(final);
    }else{
-       final.textContent="THE GAME'S A DRAW! lol";
+       final.textContent
+       ="THE GAME'S A DRAW! lol";
        final.style.color="rgb(255, 226, 231)";
        container.appendChild(final);
    }
    const fatality = document.createElement('audio');
    fatality.src="sounds/fatality.mp3";
    fatality.play();
+   fatality.volume=2;
 }
 
 function game(){
@@ -152,7 +154,7 @@ function game(){
                 body.appendChild(container);
                 
                 if(i>4){
-                    gameend(score);
+                    setTimeout(gameend(score),3000);
                 }else{
                     oneRound();
                 }
@@ -273,9 +275,9 @@ function game(){
     const rockbutton = document.createElement('div');
     const paperbutton = document.createElement('div');
     const scissorsbutton = document.createElement('div');
-    rockbutton.classList.add('choice');
-    paperbutton.classList.add('choice');
-    scissorsbutton.classList.add('choice');
+    rockbutton.classList.add('choice','hoverable');
+    paperbutton.classList.add('choice','hoverable');
+    scissorsbutton.classList.add('choice','hoverable');
     rockbutton.textContent="ROCK";
     paperbutton.textContent="PAPER";
     scissorsbutton.textContent="SCISSORS";
