@@ -51,9 +51,6 @@ begin.addEventListener('click', function(){
 function gameend(score){
    
    const final = document.createElement('h2');
-   const br = document.createElement('br');
-   
-  
    
    if(score[0]>score[1]){
        final.textContent="YOU WIN THE GAME!";
