@@ -51,7 +51,7 @@ begin.addEventListener('click', function(){
 function gameend(score){
    
    const final = document.createElement('h2');
-   
+
    if(score[0]>score[1]){
        final.textContent="YOU WIN THE GAME!";
        final.style.color="rgb(255, 226, 231)";
@@ -157,7 +157,7 @@ function game(){
                 }
                 
             }
-
+            navbar.style.color="black";
             circle = document.createElement('div');
             circle.classList.add("circle");
             resultmsg = document.createElement('h2');
@@ -282,6 +282,7 @@ function game(){
 
     function oneRound(){
         navbar.textContent=`${score[0]}  :  ${score[1]}`;
+        navbar.style.color="white";
         i++;
         //show round, then round goes away after 1 second and options are displayed.
         round.textContent=`ROUND ${i}`;
