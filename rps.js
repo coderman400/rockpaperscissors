@@ -10,25 +10,25 @@ scissors.textContent='SCISSORS';
 
 //flashes rock paper scissors
 function showText(){
-    body.appendChild(rock);
+    container.appendChild(rock);
     rock.style.opacity="0";
     rock.classList.add('introanim');
     rock.addEventListener('animationend', function(){
-        body.removeChild(rock); 
-        body.appendChild(paper);
+        container.removeChild(rock); 
+        container.appendChild(paper);
         paper.style.opacity="0";
         paper.classList.add('introanim');
     })
     
     paper.addEventListener('animationend', function(){
-        body.removeChild(paper); 
-        body.appendChild(scissors);
+        container.removeChild(paper); 
+        container.appendChild(scissors);
         scissors.style.opacity="0";
         scissors.classList.add('introanim');
     })
     scissors.addEventListener('animationend', function(){
         game();
-        body.removeChild(scissors);
+        container.removeChild(scissors);
         
 })
 }
@@ -278,6 +278,7 @@ function game(){
     rockbutton.classList.add('choice','hoverable');
     paperbutton.classList.add('choice','hoverable');
     scissorsbutton.classList.add('choice','hoverable');
+
     rockbutton.textContent="ROCK";
     paperbutton.textContent="PAPER";
     scissorsbutton.textContent="SCISSORS";

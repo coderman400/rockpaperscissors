@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet"> 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet"> 
         <title> ROCK PAPER SCISSORS</title>
         <script src="rps.js" defer></script>
         <style>
             #container{
-                display:flex;
-                align-items: center;
-                justify-content: space-around;
-                
-
+                display: flex;
+                justify-content: center;
+                place-items: center;
+                width: 80vw;
+                height: 50vh;
+                padding: 0 10%;
             }
 
             h2{
@@ -19,7 +26,7 @@
                              1px 1px 0 #000,
                              1px -1px 0 #000,
                              -1px -1px 0 #000;
-                font-family: rubric;
+                font-family: Rubik;
             
 
             }
@@ -32,7 +39,7 @@
                              1px 1px 0 #000,
                              1px -1px 0 #000,
                              -1px -1px 0 #000;
-                font-family: rubric;
+                font-family: Rubik;
             }
 
             body{
@@ -86,7 +93,7 @@
                 font:          normal bold 26px/1 "Ubuntu", sans-serif;
                 text-align:    center;
                 text-shadow:   1px 1px #ffffff;
-                font-size: 100px;
+                font-size: 40pt;
             }
 
             img{
@@ -143,7 +150,7 @@
             .resultmsg{
               
                 color:black;
-                font-size: 200px;
+                font-size: 80pt;
                 z-index: 10;
                 transition: 2s;
 
@@ -156,7 +163,7 @@
             #navbar{
                 position:absolute;
                 top:0px;
-                font-family: rubric;
+                font-family: Rubik;
                 font-size:100px;
                 
             }
@@ -170,8 +177,9 @@
     </head>
     <body>
         <div id="navbar" class = "navbar"></div>
-        <div id="begin" class="begin hoverable">BEGIN</div>
+        
         <div id="container">
+            <div id="begin" class="begin hoverable">BEGIN</div>
         
         </div>
 
