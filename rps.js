@@ -57,7 +57,7 @@ function gameend(score){
        final.style.color="rgb(255, 226, 231)";
        container.appendChild(final);
    }else if(score[1]>score[0]){
-       final.textContent="LMAO YOU LOST THE GAME? L";
+       final.textContent="YOU LOST THE GAME HEHE";
        final.style.color="rgb(255, 226, 231)";
        container.appendChild(final);
    }else{
